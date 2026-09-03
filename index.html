@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Fatima's Pink Candy World 🎀</title>
+
+  <meta
+    name="description"
+    content="A sweet pink candy world made especially for Fatima."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Nunito:wght@400;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Floating Background Decorations -->
+  <div class="background-decorations" aria-hidden="true">
+    <span class="floating-bow bow-1">🎀</span>
+    <span class="floating-bow bow-2">🎀</span>
+    <span class="floating-bow bow-3">🎀</span>
+    <span class="floating-bow bow-4">🎀</span>
+
+    <span class="floating-heart heart-1">🩷</span>
+    <span class="floating-heart heart-2">💗</span>
+    <span class="floating-heart heart-3">🩷</span>
+
+    <span class="floating-candy candy-1">🍭</span>
+    <span class="floating-candy candy-2">🍬</span>
+    <span class="floating-candy candy-3">🍭</span>
+
+    <span class="sparkle sparkle-1">✨</span>
+    <span class="sparkle sparkle-2">✦</span>
+    <span class="sparkle sparkle-3">✨</span>
+  </div>
+
+
+  <!-- Top Bar -->
+  <header class="topbar">
+    <div class="logo">
+      <span class="logo-icon">🎀</span>
+
+      <div>
+        <strong>Fatima</strong>
+        <small>Pink Candy World</small>
+      </div>
+    </div>
+
+    <button class="music-toggle" id="musicToggle" type="button">
+      🎵
+      <span>Music</span>
+    </button>
+  </header>
+
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+
+      <div class="hero-badge">
+        🎀 Made Especially for Fatima
+      </div>
+
+      <div class="hero-candy">
+        🍭
+      </div>
+
+      <p class="hero-small-text">
+        Welcome to
+      </p>
+
+      <h1>
+        Fatima's
+        <span>Pink Candy World</span>
+      </h1>
+
+      <p class="hero-description">
+        A sweet little place full of pink bows,
+        candy surprises, sparkles and magical fun.
+      </p>
+
+      <button
+        class="enter-button"
+        id="enterWorldBtn"
+        type="button"
+      >
+        Enter My Candy World
+        <span>✨</span>
+      </button>
+
+      <div class="scroll-hint">
+        <span>Something sweet is waiting</span>
+        <span class="scroll-arrow">↓</span>
+      </div>
+
+    </section>
+
+
+    <!-- Main Activities -->
+    <section class="world-section" id="world">
+
+      <div class="section-title">
+        <span class="mini-bow">🎀</span>
+
+        <p>FATIMA'S SWEET WORLD</p>
+
+        <h2>
+          Choose your
+          <span>next surprise</span>
+        </h2>
+
+        <p class="section-description">
+          Tap a card and discover something fun.
+        </p>
+      </div>
+
+
+      <div class="activities-grid">
+
+        <!-- Pink Bow Hunt -->
+        <button
+          class="activity-card bow-hunt-card"
+          data-section="bowhunt"
+          type="button"
+        >
+          <span class="corner-icon">🎀</span>
+
+          <div class="activity-icon">
+            🔎
+          </div>
+
+          <div class="activity-content">
+            <small>FIND THEM ALL</small>
+            <h3>Pink Bow Hunt</h3>
+            <p>
+              Search for hidden pink bows around Fatima's world.
+            </p>
+          </div>
+
+          <span class="activity-arrow">→</span>
+        </button>
+
+
+        <!-- Candy Shop -->
+        <button
+          class="activity-card candy-shop-card"
+          data-section="candy"
+          type="button"
+        >
+          <span class="corner-icon">🍭</span>
+
+          <div class="activity-icon">
+            🍬
+          </div>
+
+          <div class="activity-content">
+            <small>SO SWEET</small>
+            <h3>Candy Shop</h3>
+            <p>
+              Build your own magical box of colorful candy.
+            </p>
+          </div>
+
+          <span class="activity-arrow">→</span>
+        </button>
+
+
+        <!-- Sticker Book -->
+        <button
+          class="activity-card sticker-card"
+          data-section="stickers"
+          type="button"
+        >
+          <span class="corner-icon">✨</span>
+
+          <div class="activity-icon">
+            🌸
+          </div>
+
+          <div class="activity-content">
+            <small>COLLECT & DECORATE</small>
+            <h3>Sticker Book</h3>
+            <p>
+              Collect cute stickers and fill your special pages.
+            </p>
+          </div>
+
+          <span class="activity-arrow">→</span>
+        </button>
+
+
+        <!-- Magic Mirror -->
+        <button
+          class="activity-card mirror-card"
+          data-section="mirror"
+          type="button"
+        >
+          <span class="corner-icon">💗</span>
+
+          <div class="activity-icon">
+            🪞
+          </div>
+
+          <div class="activity-content">
+            <small>WHO'S THAT?</small>
+            <h3>Magic Mirror</h3>
+            <p>
+              Ask the mirror and discover your magical title.
+            </p>
+          </div>
+
+          <span class="activity-arrow">→</span>
+        </button>
+
+
+        <!-- Surprise Machine -->
+        <button
+          class="activity-card surprise-card"
+          data-section="surprise"
+          type="button"
+        >
+          <span class="corner-icon">🎁</span>
+
+          <div class="activity-icon">
+            🎰
+          </div>
+
+          <div class="activity-content">
+            <small>PRESS THE BUTTON</small>
+            <h3>Surprise Machine</h3>
+            <p>
+              Try your luck and see what magical surprise appears.
+            </p>
+          </div>
+
+          <span class="activity-arrow">→</span>
+        </button>
+
+
+        <!-- Dance Party -->
+        <button
+          class="activity-card dance-card"
+          data-section="dance"
+          type="button"
+        >
+          <span class="corner-icon">🎵</span>
+
+          <div class="activity-icon">
+            💃
+          </div>
+
+          <div class="activity-content">
+            <small>LET'S DANCE</small>
+            <h3>Tiny Dance Party</h3>
+            <p>
+              Turn on the music and make the whole world dance.
+            </p>
+          </div>
+
+          <span class="activity-arrow">→</span>
+        </button>
+
+
+        <!-- Sweet Messages -->
+        <button
+          class="activity-card messages-card"
+          data-section="messages"
+          type="button"
+        >
+          <span class="corner-icon">💌</span>
+
+          <div class="activity-icon">
+            💗
+          </div>
+
+          <div class="activity-content">
+            <small>JUST FOR FATIMA</small>
+            <h3>Sweet Messages</h3>
+            <p>
+              Open a little message made especially for you.
+            </p>
+          </div>
+
+          <span class="activity-arrow">→</span>
+        </button>
+
+
+        <!-- Secret Pink Door -->
+        <button
+          class="activity-card secret-card locked"
+          data-section="secret"
+          type="button"
+        >
+          <span class="corner-icon">🔐</span>
+
+          <div class="activity-icon">
+            🚪
+          </div>
+
+          <div class="activity-content">
+            <small>TOP SECRET</small>
+            <h3>Secret Pink Door</h3>
+            <p>
+              Collect enough pink bows to unlock the secret door.
+            </p>
+          </div>
+
+          <span class="activity-arrow">?</span>
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- Sweet Messages Popup -->
+    <section
+      class="popup"
+      id="messagesPopup"
+      aria-hidden="true"
+    >
+      <div class="popup-overlay"></div>
+
+      <div class="popup-card">
+
+        <button
+          class="close-popup"
+          type="button"
+          aria-label="Close"
+        >
+          ×
+        </button>
+
+        <div class="popup-icon">
+          💌
+        </div>
+
+        <p class="popup-label">
+          A SWEET MESSAGE FOR
+        </p>
+
+        <h2>Fatima</h2>
+
+        <div class="message-card">
+          <p id="messageText">
+            You make the world a little sweeter just by being you. 🩷
+          </p>
+        </div>
+
+        <button
+          class="popup-button"
+          id="nextMessageBtn"
+          type="button"
+        >
+          Another Message
+          <span>💗</span>
+        </button>
+
+      </div>
+    </section>
+
+
+    <!-- Magic Mirror Popup -->
+    <section
+      class="popup"
+      id="mirrorPopup"
+      aria-hidden="true"
+    >
+      <div class="popup-overlay"></div>
+
+      <div class="popup-card">
+
+        <button
+          class="close-popup"
+          type="button"
+          aria-label="Close"
+        >
+          ×
+        </button>
+
+        <div class="popup-icon">
+          🪞
+        </div>
+
+        <p class="popup-label">
+          MAGIC MIRROR SAYS
+        </p>
+
+        <h2 id="mirrorTitle">
+          Princess Fatima
+        </h2>
+
+        <p class="popup-description">
+          Tap the mirror to discover another magical title.
+        </p>
+
+        <button
+          class="magic-mirror-button"
+          id="magicMirror"
+          type="button"
+        >
+          🪞
+        </button>
+
+        <button
+          class="popup-button"
+          id="newTitleBtn"
+          type="button"
+        >
+          Ask Again ✨
+        </button>
+
+      </div>
+    </section>
+
+
+    <!-- Surprise Machine Popup -->
+    <section
+      class="popup"
+      id="surprisePopup"
+      aria-hidden="true"
+    >
+      <div class="popup-overlay"></div>
+
+      <div class="popup-card">
+
+        <button
+          class="close-popup"
+          type="button"
+          aria-label="Close"
+        >
+          ×
+        </button>
+
+        <div class="popup-icon">
+          🎰
+        </div>
+
+        <p class="popup-label">
+          FATIMA'S
+        </p>
+
+        <h2>
+          Surprise Machine
+        </h2>
+
+        <button
+          class="surprise-machine"
+          id="surpriseMachine"
+          type="button"
+        >
+          <span id="surpriseEmoji">❓</span>
+        </button>
+
+        <p
+          class="surprise-text"
+          id="surpriseText"
+        >
+          Press the machine!
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- Candy Shop Popup -->
+    <section
+      class="popup"
+      id="candyPopup"
+      aria-hidden="true"
+    >
+      <div class="popup-overlay"></div>
+
+      <div class="popup-card candy-popup-card">
+
+        <button
+          class="close-popup"
+          type="button"
+          aria-label="Close"
+        >
+          ×
+        </button>
+
+        <div class="popup-icon">
+          🍭
+        </div>
+
+        <p class="popup-label">
+          WELCOME TO
+        </p>
+
+        <h2>
+          Fatima's Candy Shop
+        </h2>
+
+        <p class="popup-description">
+          Pick your favorite sweets and fill your candy box.
+        </p>
+
+        <div class="candy-options">
+
+          <button class="candy-choice" data-candy="🍬" type="button">
+            🍬
+          </button>
+
+          <button class="candy-choice" data-candy="🍭" type="button">
+            🍭
+          </button>
+
+          <button class="candy-choice" data-candy="🍫" type="button">
+            🍫
+          </button>
+
+          <button class="candy-choice" data-candy="🍓" type="button">
+            🍓
+          </button>
+
+          <button class="candy-choice" data-candy="🍩" type="button">
+            🍩
+          </button>
+
+          <button class="candy-choice" data-candy="🧁" type="button">
+            🧁
+          </button>
+
+        </div>
+
+        <div class="candy-box">
+          <small>MY CANDY BOX</small>
+          <div id="candyBox">
+            🎁
+          </div>
+        </div>
+
+        <button
+          class="popup-button"
+          id="clearCandyBtn"
+          type="button"
+        >
+          Empty My Box
+        </button>
+
+      </div>
+    </section>
+
+
+    <!-- Sticker Book Popup -->
+    <section
+      class="popup"
+      id="stickerPopup"
+      aria-hidden="true"
+    >
+      <div class="popup-overlay"></div>
+
+      <div class="popup-card">
+
+        <button
+          class="close-popup"
+          type="button"
+          aria-label="Close"
+        >
+          ×
+        </button>
+
+        <div class="popup-icon">
+          🌸
+        </div>
+
+        <p class="popup-label">
+          FATIMA'S
+        </p>
+
+        <h2>
+          Sticker Book
+        </h2>
+
+        <div class="sticker-book" id="stickerBook">
+          <span>🎀</span>
+          <span>🩷</span>
+          <span>🌸</span>
+          <span>⭐</span>
+          <span>🍭</span>
+          <span>🦋</span>
+        </div>
+
+        <p class="popup-description">
+          More stickers will appear as you explore.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- Dance Party Popup -->
+    <section
+      class="popup"
+      id="dancePopup"
+      aria-hidden="true"
+    >
+      <div class="popup-overlay"></div>
+
+      <div class="popup-card dance-popup-card">
+
+        <button
+          class="close-popup"
+          type="button"
+          aria-label="Close"
+        >
+          ×
+        </button>
+
+        <div class="popup-icon">
+          💃
+        </div>
+
+        <p class="popup-label">
+          WELCOME TO THE
+        </p>
+
+        <h2>
+          Tiny Dance Party
+        </h2>
+
+        <div class="dance-stage">
+          <span class="dancer dancer-1">🎀</span>
+          <span class="dancer dancer-2">💗</span>
+          <span class="dancer dancer-3">✨</span>
+          <span class="dancer dancer-4">🍭</span>
+        </div>
+
+        <button
+          class="popup-button"
+          id="danceButton"
+          type="button"
+        >
+          Start Dancing 🎵
+        </button>
+
+        <p class="dance-note">
+          Fatima's favorite song will go here later.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- Bow Hunt Popup -->
+    <section
+      class="popup"
+      id="bowHuntPopup"
+      aria-hidden="true"
+    >
+      <div class="popup-overlay"></div>
+
+      <div class="popup-card">
+
+        <button
+          class="close-popup"
+          type="button"
+          aria-label="Close"
+        >
+          ×
+        </button>
+
+        <div class="popup-icon">
+          🎀
+        </div>
+
+        <p class="popup-label">
+          FIND THE
+        </p>
+
+        <h2>
+          Pink Bows
+        </h2>
+
+        <p class="popup-description">
+          Tiny pink bows are hidden around the website.
+          Find them to unlock the Secret Pink Door.
+        </p>
+
+        <div class="bow-progress">
+          <span>Collected</span>
+          <strong>
+            <span id="bowCount">0</span> / 5
+          </strong>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Secret Door Popup -->
+    <section
+      class="popup"
+      id="secretPopup"
+      aria-hidden="true"
+    >
+      <div class="popup-overlay"></div>
+
+      <div class="popup-card">
+
+        <button
+          class="close-popup"
+          type="button"
+          aria-label="Close"
+        >
+          ×
+        </button>
+
+        <div class="popup-icon">
+          🚪
+        </div>
+
+        <p class="popup-label">
+          SECRET PINK DOOR
+        </p>
+
+        <h2 id="secretTitle">
+          Locked
+        </h2>
+
+        <p
+          class="popup-description"
+          id="secretText"
+        >
+          Find 5 pink bows to unlock this magical door.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- Hidden Bows -->
+    <button
+      class="hidden-bow hidden-bow-1"
+      data-bow="1"
+      type="button"
+      aria-label="Hidden pink bow"
+    >
+      🎀
+    </button>
+
+    <button
+      class="hidden-bow hidden-bow-2"
+      data-bow="2"
+      type="button"
+      aria-label="Hidden pink bow"
+    >
+      🎀
+    </button>
+
+    <button
+      class="hidden-bow hidden-bow-3"
+      data-bow="3"
+      type="button"
+      aria-label="Hidden pink bow"
+    >
+      🎀
+    </button>
+
+    <button
+      class="hidden-bow hidden-bow-4"
+      data-bow="4"
+      type="button"
+      aria-label="Hidden pink bow"
+    >
+      🎀
+    </button>
+
+    <button
+      class="hidden-bow hidden-bow-5"
+      data-bow="5"
+      type="button"
+      aria-label="Hidden pink bow"
+    >
+      🎀
+    </button>
+
+
+    <!-- Bow Counter -->
+    <div class="bow-counter">
+      <div class="bow-counter-icon">
+        🎀
+      </div>
+
+      <div>
+        <small>PINK BOWS</small>
+        <strong id="mainBowCount">0</strong>
+      </div>
+    </div>
+
+  </main>
+
+
+  <footer>
+
+    <div class="footer-icons">
+      🎀 🍭 🩷 ✨
+    </div>
+
+    <p>
+      Made especially for Fatima
+    </p>
+
+    <small>
+      Sweet, sparkly and full of surprises ♡
+    </small>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>

@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const danceButton = document.getElementById("danceButton");
   const danceStage = document.querySelector(".dance-stage");
   const musicToggle = document.getElementById("musicToggle");
+  const fatimaSong = document.getElementById("fatimaSong");
 
   const hiddenBows = document.querySelectorAll(".hidden-bow");
   const bowCountElement = document.getElementById("bowCount");
@@ -81,6 +82,10 @@ document.addEventListener("DOMContentLoaded", () => {
   function closePopup(popup) {
     if (!popup) return;
 
+    if (popup === dancePopup) {
+      stopDanceParty();
+    }
+
     popup.classList.remove("active");
     popup.setAttribute("aria-hidden", "true");
 
@@ -93,6 +98,8 @@ document.addEventListener("DOMContentLoaded", () => {
       popup.classList.remove("active");
       popup.setAttribute("aria-hidden", "true");
     });
+
+    stopDanceParty();
 
     document.body.style.overflow = "";
   }
@@ -543,73 +550,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =========================================================
-     DANCE PARTY + FATIMA'S SONG
+     DANCE PARTY + FATIMA'S FAVORITE SONG
   ========================================================= */
 
   const FATIMA_VIDEO_ID = "bOpti8PEEhU";
 
-  let danceMusicPlaying = false;
-  let youtubePlayer = null;
+  const normalSongUrl =
+    `https://www.youtube.com/embed/${FATIMA_VIDEO_ID}?rel=0`;
 
+  const autoplaySongUrl =
+    `https://www.youtube.com/embed/${FATIMA_VIDEO_ID}?autoplay=1&rel=0`;
 
-  function createYouTubePlayer() {
-
-    if (youtubePlayer) {
-      return youtubePlayer;
-    }
-
-    youtubePlayer = document.createElement("iframe");
-
-    youtubePlayer.id = "fatimaDanceSong";
-
-    youtubePlayer.title = "Fatima's Favorite Song";
-
-    youtubePlayer.src =
-      `https://www.youtube.com/embed/${FATIMA_VIDEO_ID}?enablejsapi=1&autoplay=1&rel=0`;
-
-    youtubePlayer.allow =
-      "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-
-    youtubePlayer.allowFullscreen = true;
-
-    youtubePlayer.style.width = "100%";
-    youtubePlayer.style.aspectRatio = "16 / 9";
-    youtubePlayer.style.border = "0";
-    youtubePlayer.style.borderRadius = "22px";
-    youtubePlayer.style.marginTop = "18px";
-
-    const danceCard =
-      document.querySelector(".dance-popup-card");
-
-    const danceNote =
-      document.querySelector(".dance-note");
-
-    if (danceNote) {
-      danceNote.style.display = "none";
-    }
-
-    if (danceCard) {
-      danceCard.appendChild(youtubePlayer);
-    }
-
-    return youtubePlayer;
-  }
+  let dancePartyActive = false;
 
 
   function startDanceParty() {
 
     if (!danceStage || !danceButton) return;
 
-    if (!danceMusicPlaying) {
+
+    if (!dancePartyActive) {
+
+      dancePartyActive = true;
 
       danceStage.classList.add("dancing");
-
-      createYouTubePlayer();
 
       danceButton.innerHTML =
         "Stop Dancing ⏸️";
 
-      danceMusicPlaying = true;
+      if (fatimaSong) {
+        fatimaSong.src = autoplaySongUrl;
+      }
 
       showNotification(
         "Fatima's dance party started! 🎵💃🎀"
@@ -619,21 +590,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
     } else {
 
-      danceStage.classList.remove("dancing");
-
-      if (youtubePlayer) {
-        youtubePlayer.remove();
-        youtubePlayer = null;
-      }
-
-      danceButton.innerHTML =
-        "Start Dancing 🎵";
-
-      danceMusicPlaying = false;
+      stopDanceParty();
 
       showNotification(
         "Dance party paused 💗"
       );
+    }
+  }
+
+
+  function stopDanceParty() {
+
+    dancePartyActive = false;
+
+    if (danceStage) {
+      danceStage.classList.remove("dancing");
+    }
+
+    if (danceButton) {
+      danceButton.innerHTML =
+        "Start Dancing 🎵";
+    }
+
+    if (fatimaSong) {
+      fatimaSong.src = normalSongUrl;
     }
   }
 
@@ -646,71 +626,24 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  if (musicToggle) {
-    musicToggle.addEventListener("click", () => {
-      openPopup(dancePopup);
-    });
-  }
-
-
   /* =========================================================
-     STOP MUSIC WHEN DANCE POPUP CLOSES
+     TOP MUSIC BUTTON
   ========================================================= */
 
-  const danceCloseButton =
-    dancePopup
-      ? dancePopup.querySelector(".close-popup")
-      : null;
+  if (musicToggle) {
+    musicToggle.addEventListener("click", () => {
 
-  const danceOverlay =
-    dancePopup
-      ? dancePopup.querySelector(".popup-overlay")
-      : null;
+      openPopup(dancePopup);
 
+      setTimeout(() => {
+        fatimaSong?.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+      }, 250);
 
-  function stopDanceMusic() {
-
-    if (!danceMusicPlaying) return;
-
-    danceStage?.classList.remove("dancing");
-
-    if (youtubePlayer) {
-      youtubePlayer.remove();
-      youtubePlayer = null;
-    }
-
-    if (danceButton) {
-      danceButton.innerHTML =
-        "Start Dancing 🎵";
-    }
-
-    danceMusicPlaying = false;
+    });
   }
-
-
-  if (danceCloseButton) {
-    danceCloseButton.addEventListener(
-      "click",
-      stopDanceMusic
-    );
-  }
-
-
-  if (danceOverlay) {
-    danceOverlay.addEventListener(
-      "click",
-      stopDanceMusic
-    );
-  }
-
-
-  document.addEventListener("keydown", (event) => {
-
-    if (event.key === "Escape") {
-      stopDanceMusic();
-    }
-
-  });
 
 
   /* =========================================================

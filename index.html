@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffd7ea" />
+  <title>Fatima's Pink Candy World</title>
+  <link rel="stylesheet" href="style.css?v=1.0.0" />
+</head>
+<body>
+  <div class="bg-layer" aria-hidden="true"></div>
+  <div class="bg-overlay" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="profile-pill">
+      <div class="avatar">🎀</div>
+      <div>
+        <strong>Fatima</strong>
+        <div class="mini-stats">
+          <span>🍬 <b id="topCoins">0</b></span>
+          <span>⭐ <b id="topStars">0</b></span>
+        </div>
+      </div>
+    </div>
+    <button class="round-btn" id="musicShortcut" type="button" aria-label="Open music">🎵</button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="glass hero-card">
+        <div class="tiny-badge">🍭 Welcome to your sweetest little world 🍭</div>
+        <div class="hero-icon">🎀</div>
+        <p class="eyebrow">Fatima's</p>
+        <h1>Pink Candy <span>World</span></h1>
+        <p class="hero-copy">
+          Play games, collect candy coins, unlock surprises, listen to your favorite song and discover the Secret Pink Door.
+        </p>
+
+        <button id="startExploring" class="primary-btn" type="button">Start Playing 🩷</button>
+
+        <div class="hero-stats">
+          <div><span>🍬</span><strong id="heroCoins">0</strong><small>Candy Coins</small></div>
+          <div><span>⭐</span><strong id="heroStars">0</strong><small>Stars</small></div>
+          <div><span>🏆</span><strong id="heroBadges">0</strong><small>Badges</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-wrap" id="activities">
+      <div class="glass section-title">
+        <span class="eyebrow">Play & Explore</span>
+        <h2>Choose Something Fun</h2>
+        <p>Every game can give you candy coins, stars and new little surprises.</p>
+      </div>
+
+      <div class="activity-grid">
+        <button class="activity-card" data-open="messagesPopup">
+          <span class="icon">💌</span><h3>Sweet Messages</h3>
+          <p>Open a cute little message just for Fatima.</p><span class="go">Open →</span>
+        </button>
+
+        <button class="activity-card" data-open="songPopup">
+          <span class="icon">🎵</span><h3>Music Corner</h3>
+          <p>Listen to Fatima's favorite song.</p><span class="go">Listen →</span>
+        </button>
+
+        <button class="activity-card" data-open="candyPopup">
+          <span class="icon">🍬</span><h3>Candy Catcher</h3>
+          <p>Catch falling candy before time runs out.</p><span class="go">Play →</span>
+        </button>
+
+        <button class="activity-card" data-open="heartPopup">
+          <span class="icon">💗</span><h3>Pop The Hearts</h3>
+          <p>Pop as many hearts as you can.</p><span class="go">Play →</span>
+        </button>
+
+        <button class="activity-card" data-open="memoryPopup">
+          <span class="icon">🃏</span><h3>Memory Cards</h3>
+          <p>Match the cute pairs and win candy coins.</p><span class="go">Play →</span>
+        </button>
+
+        <button class="activity-card" data-open="cupcakePopup">
+          <span class="icon">🧁</span><h3>Cupcake Maker</h3>
+          <p>Decorate a tiny cupcake your way.</p><span class="go">Create →</span>
+        </button>
+
+        <button class="activity-card" data-open="bunnyPopup">
+          <span class="icon">🐰</span><h3>Bunny Playtime</h3>
+          <p>Feed, play and take care of Bunny.</p><span class="go">Visit →</span>
+        </button>
+
+        <button class="activity-card" data-open="wheelPopup">
+          <span class="icon">🎡</span><h3>Lucky Wheel</h3>
+          <p>Spin once a day and win a surprise.</p><span class="go">Spin →</span>
+        </button>
+
+        <button class="activity-card" data-open="treasurePopup">
+          <span class="icon">🗝️</span><h3>Treasure Hunt</h3>
+          <p>Find hidden candy treasures.</p><span class="go">Search →</span>
+        </button>
+
+        <button class="activity-card" data-open="achievementsPopup">
+          <span class="icon">🏆</span><h3>My Badges</h3>
+          <p>See all the badges Fatima has unlocked.</p><span class="go">View →</span>
+        </button>
+
+        <button class="activity-card secret-card" id="secretDoorCard" data-open="secretPopup">
+          <span class="icon">🔐</span><h3>Secret Pink Door</h3>
+          <p>Collect 30 candy coins and 20 stars to unlock it.</p><span class="go">Unlock →</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="progress-wrap">
+      <div class="glass progress-card">
+        <div class="progress-header">
+          <div><span class="eyebrow">Secret Journey</span><h2>Unlock The Pink Door</h2></div>
+          <span class="lock">🔐</span>
+        </div>
+        <p>Reach 30 Candy Coins and 20 Stars.</p>
+        <div class="progress-track"><div id="progressBar"></div></div>
+        <span id="progressText">0% completed</span>
+      </div>
+    </section>
+  </main>
+
+  <!-- Popups -->
+  <section class="popup" id="messagesPopup" aria-hidden="true">
+    <div class="overlay"></div><div class="popup-card">
+      <button class="close" type="button">×</button>
+      <span class="popup-icon">💌</span><span class="eyebrow">Sweet Message</span>
+      <h2>Just For Fatima</h2>
+      <div class="message-box"><p id="messageText">You make this little world sweeter just by being here. 🩷</p></div>
+      <button class="popup-btn" id="newMessage" type="button">Another Message ✨</button>
+    </div>
+  </section>
+
+  <section class="popup" id="songPopup" aria-hidden="true">
+    <div class="overlay"></div><div class="popup-card wide">
+      <button class="close" type="button">×</button>
+      <span class="popup-icon">🎵</span><span class="eyebrow">Music Corner</span>
+      <h2>Fatima's Favorite Song</h2>
+      <div class="youtube-wrap">
+        <iframe
+          src="https://www.youtube.com/embed/bOpti8PEEhU?rel=0"
+          title="Fatima's Favorite Song"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="popup" id="candyPopup" aria-hidden="true">
+    <div class="overlay"></div><div class="popup-card wide">
+      <button class="close" type="button">×</button>
+      <span class="eyebrow">Mini Game</span><h2>Candy Catcher 🍬</h2>
+      <p>Catch as much candy as you can!</p>
+      <div class="game-area" id="candyGame">
+        <div class="game-cover" id="candyCover">
+          <span>🍬</span><button class="popup-btn" id="startCandyGame" type="button">Start Game</button>
+        </div>
+      </div>
+      <div class="score-row"><span>Score: <b id="candyScore">0</b></span><span>Time: <b id="candyTime">15</b>s</span></div>
+    </div>
+  </section>
+
+  <section class="popup" id="heartPopup" aria-hidden="true">
+    <div class="overlay"></div><div class="popup-card wide">
+      <button class="close" type="button">×</button>
+      <span class="eyebrow">Mini Game</span><h2>Pop The Hearts 💗</h2>
+      <p>Tap the hearts before they disappear.</p>
+      <div class="game-area" id="heartGame">
+        <div class="game-cover" id="heartCover">
+          <span>💗</span><button class="popup-btn" id="startHeartGame" type="button">Start Game</button>
+        </div>
+      </div>
+      <div class="score-row"><span>Popped: <b id="heartScore">0</b></span><span>Time: <b id="heartTime">15</b>s</span></div>
+    </div>
+  </section>
+
+  <section class="popup" id="memoryPopup" aria-hidden="true">
+    <div class="overlay"></div><div class="popup-card wide">
+      <button class="close" type="button">×</button>
+      <span class="eyebrow">Mini Game</span><h2>Memory Cards 🃏</h2>
+      <p>Match all the pairs.</p>
+      <div class="memory-grid" id="memoryGrid"></div>
+      <button class="popup-btn" id="restartMemory" type="button">Restart Game</button>
+    </div>
+  </section>
+
+  <section class="popup" id="cupcakePopup" aria-hidden="true">
+    <div class="overlay"></div><div class="popup-card wide">
+      <button class="close" type="button">×</button>
+      <span class="eyebrow">Sweet Bakery</span><h2>Cupcake Maker 🧁</h2>
+      <div class="cupcake-preview">
+        <div id="frosting">🩷</div><div class="cake">🧁</div><div id="decoration">✨</div>
+      </div>
+      <div class="option-label">Frosting</div>
+      <div class="choices">
+        <button type="button" data-frost="🩷">🩷</button><button type="button" data-frost="🤍">🤍</button><button type="button" data-frost="💜">💜</button><button type="button" data-frost="🩵">🩵</button>
+      </div>
+      <div class="option-label">Decoration</div>
+      <div class="choices">
+        <button type="button" data-deco="✨">✨</button><button type="button" data-deco="🎀">🎀</button><button type="button" data-deco="🍓">🍓</button><button type="button" data-deco="⭐">⭐</button>
+      </div>
+      <button class="popup-btn" id="finishCupcake" type="button">Finish Cupcake</button>
+    </div>
+  </section>
+
+  <section class="popup" id="bunnyPopup" aria-hidden="true">
+    <div class="overlay"></div><div class="popup-card">
+      <button class="close" type="button">×</button>
+      <span class="eyebrow">Little Friend</span><h2>Bunny Playtime 🐰</h2>
+      <div class="bunny" id="bunny">🐰</div>
+      <p id="bunnyMood">Bunny is excited to see you!</p>
+      <div class="bunny-actions">
+        <button type="button" data-bunny="feed">🥕 Feed</button>
+        <button type="button" data-bunny="play">🧸 Play</button>
+        <button type="button" data-bunny="sleep">🌙 Sleep</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="popup" id="wheelPopup" aria-hidden="true">
+    <div class="overlay"></div><div class="popup-card">
+      <button class="close" type="button">×</button>
+      <span class="eyebrow">Daily Surprise</span><h2>Lucky Wheel 🎡</h2>
+      <div class="wheel" id="wheel">🍬</div>
+      <p id="wheelText">Spin once today and see what you win.</p>
+      <button class="popup-btn" id="spinWheel" type="button">Spin The Wheel</button>
+    </div>
+  </section>
+
+  <section class="popup" id="treasurePopup" aria-hidden="true">
+    <div class="overlay"></div><div class="popup-card wide">
+      <button class="close" type="button">×</button>
+      <span class="eyebrow">Treasure Hunt</span><h2>Find The Hidden Candy 🗝️</h2>
+      <p>Tap one of the boxes. One has a little treasure!</p>
+      <div class="treasure-grid" id="treasureGrid">
+        <button type="button">🎁</button><button type="button">🎁</button><button type="button">🎁</button>
+        <button type="button">🎁</button><button type="button">🎁</button><button type="button">🎁</button>
+      </div>
+      <p id="treasureText">Choose carefully ✨</p>
+    </div>
+  </section>
+
+  <section class="popup" id="achievementsPopup" aria-hidden="true">
+    <div class="overlay"></div><div class="popup-card wide">
+      <button class="close" type="button">×</button>
+      <span class="eyebrow">Badges</span><h2>Fatima's Achievements 🏆</h2>
+      <div class="achievement-grid">
+        <div class="achievement" data-achievement="firstCoin"><span>🍬</span><strong>First Candy</strong><small>Earn your first candy coin.</small></div>
+        <div class="achievement" data-achievement="tenCoins"><span>🍭</span><strong>Candy Lover</strong><small>Reach 10 candy coins.</small></div>
+        <div class="achievement" data-achievement="starGirl"><span>⭐</span><strong>Star Girl</strong><small>Reach 10 stars.</small></div>
+        <div class="achievement" data-achievement="cupcake"><span>🧁</span><strong>Cupcake Artist</strong><small>Make a cupcake.</small></div>
+        <div class="achievement" data-achievement="bunny"><span>🐰</span><strong>Bunny Friend</strong><small>Play with Bunny.</small></div>
+        <div class="achievement" data-achievement="memory"><span>🃏</span><strong>Memory Master</strong><small>Finish the memory game.</small></div>
+        <div class="achievement" data-achievement="secret"><span>🔐</span><strong>Secret Explorer</strong><small>Unlock the Secret Pink Door.</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="popup" id="secretPopup" aria-hidden="true">
+    <div class="overlay"></div><div class="popup-card secret-popup">
+      <button class="close" type="button">×</button>
+
+      <div id="secretLocked">
+        <span class="popup-icon">🔐</span><span class="eyebrow">Secret Pink Door</span>
+        <h2>Almost There...</h2>
+        <p>Collect 30 candy coins and 20 stars to unlock this special place.</p>
+        <div class="requirements">
+          <div>🍬 <strong id="secretCoins">0 / 30</strong></div>
+          <div>⭐ <strong id="secretStars">0 / 20</strong></div>
+        </div>
+      </div>
+
+      <div id="secretUnlocked" class="hidden">
+        <span class="eyebrow">✨ Secret Door Unlocked ✨</span>
+        <h2>Fatima's Special Place</h2>
+
+        <div class="secret-photo-frame">
+          <img id="secretPhoto" src="fatima-secret.jpg" alt="Fatima's special memory">
+          <div class="secret-placeholder" id="secretPlaceholder">
+            <span>🩷</span><strong>Secret Photo</strong><small>Your special photo will appear here.</small>
+          </div>
+        </div>
+
+        <div class="secret-note">
+          <span>💌</span>
+          <p>This little place is just for you — full of sweet memories, tiny surprises and happy little moments.</p>
+        </div>
+
+        <button class="secret-box" id="secretBox" type="button">🎁 <span>Open The Secret Box</span></button>
+
+        <div class="ultra-secret hidden" id="ultraSecret">
+          <span>💎</span><h3>You Found The Extra Surprise!</h3>
+          <p>You are officially the sweetest explorer in Pink Candy World.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="toast" id="toast">✨</div>
+  <footer class="glass">
+    <div>🎀</div><strong>Fatima's Pink Candy World</strong><p>Made with candy, sparkles and a little bit of magic 🩷</p>
+  </footer>
+
+  <script src="script.js?v=1.0.0"></script>
+</body>
+</html>
